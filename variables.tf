@@ -1,3 +1,8 @@
+## Extract env from terraform cloud ##
+/* locals {
+   = terraform.workspace
+} */
+
 variable "prefix" {
   type        = string
   description = "Naming prefix for resources"
@@ -22,25 +27,34 @@ variable "az_state_key" {
   default     = "terraform.tfstate"
 }
 
+
+## Secret Var Starts ##
+
 variable "az_client_id" {
   type        = string
   description = "Client ID with permissions to create resources in Azure, use env variables"
+  default = ""
 }
 
 variable "az_client_secret" {
   type        = string
   description = "Client secret with permissions to create resources in Azure, use env variables"
+  default = ""
 }
 
 variable "az_subscription" {
   type        = string
   description = "Client ID subscription, use env variables"
+  default = ""
 }
 
 variable "az_tenant" {
   type        = string
   description = "Client ID Azure AD tenant, use env variables"
+  default = ""
 }
+
+## Secret Var Ends ##
 
 resource "random_integer" "suffix" {
   min = 10000

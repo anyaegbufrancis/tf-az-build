@@ -1,6 +1,4 @@
-/* provider "azurerm" {
-  features {}
-} */
+
 
 resource "azurerm_resource_group" "poc-rg" {
   name     = local.az_resource_group_name
@@ -18,7 +16,7 @@ resource "azurerm_storage_account" "poc-sa" {
 
 resource "azurerm_storage_container" "poc-container" {
   name                 = "terraform-state"
-  storage_account_name = azurerm_storage_account.sa.name
+  storage_account_name = azurerm_storage_account.poc-sa.name
 
 }
 
