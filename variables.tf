@@ -1,7 +1,3 @@
-## Extract env from terraform cloud ##
-/* locals {
-   = terraform.workspace
-} */
 
 variable "prefix" {
   type        = string

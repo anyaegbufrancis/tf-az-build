@@ -6,7 +6,7 @@ terraform {
     }
   }
 }
-
+ // Updatign file
 
 provider "azurerm" {
   features {}
